@@ -24,10 +24,8 @@ try:
                 except ValueError:
                     continue 
 
-    # This print statement is inside the 'try' block
     print(f"Successfully loaded {len(raw_data)} data points.")
 
-# THIS PART IS CRITICAL - The 'try' block will crash without it!
 except FileNotFoundError:
     print(f"ERROR: Could not find '{filename}'. Please make sure the file is in the same folder.")
     raw_data = [(1, "00:00", 0.0)]
