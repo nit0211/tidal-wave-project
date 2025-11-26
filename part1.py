@@ -9,7 +9,6 @@ try:
     with open(filename, 'r') as f:
         print(f"Reading from {filename}...")
         for line in f:
-            # Skip comments or empty lines
             if line.startswith('#') or not line.strip():
                 continue
             
@@ -27,8 +26,13 @@ try:
     print(f"Successfully loaded {len(raw_data)} data points.")
 
 except FileNotFoundError:
-    print(f"ERROR: Could not find '{filename}'. Please make sure the file is in the same folder.")
+    print(f"ERROR: Could not find '{filename}'.")
     raw_data = [(1, "00:00", 0.0)]
+
+# --- FIX START: INITIALIZE LISTS HERE ---
+time_days = []
+heights = []
+# --- FIX END ---
 
 for day, time_str, height in raw_data:
     h, m = map(int, time_str.split(':'))
