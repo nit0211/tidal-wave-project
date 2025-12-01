@@ -29,10 +29,8 @@ except FileNotFoundError:
     print(f"ERROR: Could not find '{filename}'.")
     raw_data = [(1, "00:00", 0.0)]
 
-# --- FIX START: INITIALIZE LISTS HERE ---
 time_days = []
 heights = []
-# --- FIX END ---
 
 for day, time_str, height in raw_data:
     h, m = map(int, time_str.split(':'))
